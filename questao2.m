@@ -52,6 +52,27 @@ for linha = 1:100
     
 end
 
+Y_real = y';
+phi_pseudoinversa = pinv(phi);
+theta_estimado = phi_pseudoinversa*Y_real;
+Y_estimado = phi*theta_estimado;
+
+%resíduo e média(resíduo)
+erro_residual = Y_real - Y_estimado;
+erro_residual_media = mean(erro_residual);
+
+%% Plotar erro e Y_real com Y_estimado
+
+disp('Theta:')
+theta_estimado
+disp('Error:')
+erro_residual
+erro_residual_media
+plot(Y_real, 'b')
+hold on
+plot(Y_estimado, 'r')
+legend('Y', 'Y estimado')
+
 
 
 
