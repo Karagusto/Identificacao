@@ -44,4 +44,6 @@ legend('Yb(k)')
 hold on
 
 step(Gb)
+
+%% Análise pelos pólos
                                   
